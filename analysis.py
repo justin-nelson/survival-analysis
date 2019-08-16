@@ -448,7 +448,7 @@ class SurvivalAnalyzer:
 
     def readin_stacks(self):
         '''Read in and yield every TIF image file within images path as numpy array.'''
-        stackpaths = glob(self.imgdir +'\*.tif')
+        stackpaths = glob(self.imgdir +'/*.tif')
         for stackpath in stackpaths:
             #Obtain well name
             well = os.path.basename(stackpath).split('.')[0]
