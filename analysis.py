@@ -205,11 +205,15 @@ class Tracker():
         return [Neuron(ID=i, init_roi=rois[i]) for i in range(len(rois))]
 
     def _find_candidates(self, img):
+        print("Finding Candidates: ", end="")
         graded_slices = self._find_graded_somas(img)
+        print(str(len(graded_slices)), " graded slices found. ", end="")
+        
         centroid_estimates = self._estimate_centroids(graded_slices)
         expanded_slices = self._expand_slices(img, graded_slices)
         self._threshold(img)
-
+        print(str(len(expanded_slices)) + " expanded slices found. ", end="")
+        
         # Begin processing image and building candidate neurons.
         candidates = []
         px = self.um_to_px(10)
