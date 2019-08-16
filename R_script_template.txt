@@ -11,7 +11,7 @@ groups = c(DOUBLE_QUOTED_COMMA_DELIMITED_GROUPS)
 colors = c(DOUBLE_QUOTED_COMMA_DELIMITED_COLORS)
 
 #Attempt to load workspace
-tryCatch(load(paste(expname, "RData", sep=".")), warning=function(e){invisible(e)})
+# tryCatch(load(paste(expname, "RData", sep=".")), warning=function(e){invisible(e)})
 
 #Set working directory
 setwd(workdir)
