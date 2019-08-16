@@ -425,7 +425,7 @@ def run_cox_analysis(config, outdir):
     cox_analysis_results_file = open(join(os.path.dirname(outdir), 'results', exp_name + '_results.txt'), 'w')
 
     #Be sure to pipe out errors too
-    subprocess.call(['rscript', scriptpath], stdout=cox_analysis_results_file)
+    subprocess.call(['Rscript', scriptpath], stdout=cox_analysis_results_file)
 
 
 class SurvivalAnalyzer:
