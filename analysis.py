@@ -238,7 +238,8 @@ class Tracker():
 
             for contour in contours:
                 candidates.append((centroid_estimates[ix], contour))
-
+                
+        print(str(len(candidates)) + " candidates found. ")
         return candidates
 
     def _assign_rois(self, img, timepoint, neurons, candidates):
