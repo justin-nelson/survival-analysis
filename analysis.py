@@ -50,7 +50,7 @@ class Tracker():
 
         # For each slice, check if any value in its interior is already 1. If so, that means it is overlapping
         # another slice. Then check if it overlaps any other slice. If so, remove it.
-        num_array = np.empty_like(img, dtype=np.uint8)
+        num_array = np.zeros_like(img, dtype=np.uint8)
         for s in slices[:]:
             sub_array = num_array[s]
             if 1 in sub_array:
@@ -400,7 +400,7 @@ def run_cox_analysis(config, outdir):
     with open(join(dirpath, 'R_script_template.txt')) as f:
         text = f.read()
         workdir = join(os.path.dirname(outdir), 'results')
-        workdir = workdir.replace('\\', '\\\\').replace('/', '\\\\')
+        workdir = workdir.replace('\\', '\\\\')
         fname = exp_name + '_surv_data.csv'
         text = text.replace('WORKDIR', workdir).replace('FILENAME', fname).replace('EXPNAME', exp_name)
 
